@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Name>Simplified Chinese</Name>
+	<Code>CN</Code>
+	<Font>font_cjk</Font>
+	<Interface>
+		<Record>
+			<Key>TutoiralLogic</Key>
+			<Value>逻辑</Value>
+		</Record>
+		<Record>
+			<Key>TutoiralLogicDescription</Key><!--This is the description that appers in the menu-->
+			<Value>增强您对基本逻辑系统的理解。</Value>
+		</Record>
+		<Record>
+			<Key>TutoiralLogicSubTitle</Key>
+			<Value>实践培训：阶段八</Value>
+		</Record>
+		<Record>
+			<Key>IntoTutoiralLogicDescription</Key>
+			<Value>欢迎回来，学员。ODA指挥部希望测试您对基本逻辑电路的理解。
+通过设计照明控制系统来展示您的技能。</Value>
+		</Record>
+		<Record>
+			<Key>8Narration0D</Key>
+			<Value>像银河系中的大多数逻辑系统一样，Stationeers设备使用两个值：0和1，来设置“开/关”，“打开/关闭”和“锁定/解锁”等状态。今天，您将使用逻辑系统来控制照明系统。首先放置电灯开关。使用(套件)逻辑开关中的逻辑开关(翻译注:长的像拉杆)。</Value>
+		</Record>
+		<Record>
+			<Key>8ConstructLever</Key>
+			<Value>从箱子中取出(套件)逻辑开关并在高亮位置安装逻辑开关</Value>
+		</Record>
+		<Record>
+			<Key>8Narration1D</Key>
+			<Value>大多数Stationeers设备有两个端口：电源和数据。数据端口使用电力载波传输有关设备当前状态的信息。因此，请将逻辑开关连接到电线网络。</Value>
+		</Record>
+		<Record>
+			<Key>8ConstructCable</Key>
+			<Value>从箱子中取出高压电线并在高亮位置安装</Value>
+		</Record>
+		<Record>
+			<Key>8ConstructCable2</Key>
+			<Value>在高亮位置安装高压电线</Value>
+		</Record>
+		<Record>
+			<Key>8Narration2D</Key>
+			<Value>顾名思义，逻辑读取器是你从设备读取逻辑值的方式。
+要读取逻辑开关的数据，请将逻辑读取器安装在高亮位置。请注意，逻辑读取器信号输入接口只接收信号，输出接口只输出信号。</Value>
+		</Record>
+		<Record>
+			<Key>8ConstructReader</Key>
+			<Value>从箱子中取出(套件)逻辑I/O并在高亮位置安装逻辑读取器</Value>
+		</Record>
+		<Record>
+			<Key>8Narration3D</Key>
+			<Value>逻辑写入器是不同的。它从逻辑读取器接收数据，然后将该数据写入给定设备 - 在这种情况下是灯。</Value>
+		</Record>
+		<Record>
+			<Key>8ConstructWriter</Key>
+			<Value>在高亮位置安装逻辑写入器</Value>
+		</Record>
+		<Record>
+			<Key>8Narration4D</Key>
+			<Value>现在是时候对这些逻辑器件进行编程了。从逻辑读取器开始。
+使用螺丝刀将读取器的输入(IN)设置为“逻辑开关”。然后将它将读取的变量(VAR)设置为逻辑开关的拉杆开关状态“Open”。</Value>
+		</Record>
+		<Record>
+			<Key>8LogicReaderLogicInput1</Key>
+			<Value>用螺丝刀将逻辑读取器(IN)设置为“逻辑开关”</Value>
+		</Record>
+		<Record>
+			<Key>8LogicReaderLogic1</Key>
+			<Value>用螺丝刀将将逻辑读取器(VAR)设置为“Open”</Value>
+		</Record>
+		<Record> 
+			<Key>8Narration5D</Key>
+			<Value>现在对逻辑写入器进行编程。
+将写入器的输入(IN)设置为“逻辑读取器”，将其输出(OUT)设置为“壁灯”。
+最后，将输出变量(OUT VAR)设置为“On”，以便切换灯光的开/关变量。</Value>
+		</Record>
+		<Record>
+			<Key>8LogicWritterInput1</Key>
+			<Value>将逻辑写入器(IN)设置为“逻辑读取器”</Value>
+		</Record>
+		<Record>
+			<Key>LogicWritterOutput1</Key>
+			<Value>将逻辑写入器OUT设置为“壁灯”</Value>
+		</Record>
+		<Record>
+			<Key>8LogicWritterLogic1</Key>
+			<Value>将逻辑写入器OUT VAR设置为“On”</Value>
+		</Record>
+		<Record>
+			<Key>8Narration6D</Key>
+			<Value>现在逻辑读取器和逻辑写入器已编程，因此可以安全地打开它们。</Value>
+		</Record>
+		<Record>
+			<Key>8TurnOnReader</Key>
+			<Value>打开逻辑读取器电源开关</Value>
+		</Record>
+		<Record>
+			<Key>8TurnOnWriter</Key>
+			<Value>打开逻辑写入器电源开关</Value>
+		</Record>
+		<Record>
+			<Key>8Narration7D</Key>
+			<Value>太好了 - 现在您已准备好测试逻辑电路。尝试通过拉逻辑开关杆打开灯。</Value>
+		</Record>
+		<Record>
+			<Key>8TurnOnWallLight</Key>
+			<Value>拉逻辑开关杆打开灯</Value>
+		</Record>
+		<Record>
+			<Key>8Narration8D</Key>
+			<Value>干得好，学员 - 你已经创建了一个基本的逻辑电路。现在，设置一个系统来同时控制多个灯。首先将房间中的所有灯连接到逻辑网络。</Value>
+		</Record>
+		<Record>
+			<Key>8ConstructCable2</Key>
+			<Value>在高亮位置安装高压电线</Value>
+		</Record>
+		<Record>
+			<Key>8Narration9D</Key>
+			<Value>要设置此系统，您需要调整逻辑设备。先关掉它们，否则它们会感到困惑。</Value>
+		</Record>
+		<Record>
+			<Key>8TurnOffWriter</Key>
+			<Value>关闭逻辑写入器电源开关</Value>
+		</Record>
+		<Record>
+			<Key>8TurnOffReader</Key>
+			<Value>关闭逻辑读取器电源开关</Value>
+		</Record>
+		<Record>
+			<Key>8Narration10D</Key>
+			<Value>关闭逻辑写入器后，您可以重置杠杆，而不会让自己陷入可怕的黑暗中。</Value>
+		</Record>
+		<Record>
+			<Key>8Closelever</Key>
+			<Value>复位逻辑开关杆。</Value>
+		</Record>
+		<Record>
+			<Key>8Narration11D</Key>
+			<Value>您需要将批处理写入器添加到网络。批处理写入器与逻辑写入器一样，只是它们可以写入多个设备。</Value>
+		</Record>
+		<Record>
+			<Key>8ConstructBatchWriter</Key>
+			<Value>在高亮位置安装批量写入器</Value>
+		</Record>
+		<Record>
+			<Key>8Narration12D</Key>
+			<Value>在批量写入器的输出中选择“壁灯”。这将导致它写入网络上的每个壁灯。</Value>
+		</Record>
+		<Record>
+			<Key>8BatchWriterOutput</Key>
+			<Value>将批量写入器OUT TYPE设置为“壁灯”</Value>
+		</Record>
+		<Record>
+			<Key>8Narration13D</Key>
+			<Value>现在，将批量写入器的输入(IN)设置为“逻辑读取器”。然后将它在灯上写入的变量(OUT VAR)设置为“On”。</Value>
+		</Record>
+		<Record>
+			<Key>8BatchWriterInput</Key>
+			<Value>将批量写入器IN设置为“逻辑读取器”</Value>
+		</Record>
+		<Record>
+			<Key>8BatchWriterLogicType</Key>
+			<Value>将批量写入器OUT VAR设置为“On”</Value>
+		</Record>
+		<Record>
+			<Key>8Narration14D</Key>
+			<Value>批处理写入器现已编程。所以你已经准备好打开它和逻辑读取器。</Value>
+		</Record>
+		<Record>
+			<Key>8TurnOnBatchWriter</Key>
+			<Value>打开批量写入器电源开关</Value>
+		</Record>
+		<Record>
+			<Key>8Narration15D</Key>
+			<Value>好的，现在让我们测试整个系统 - 拉逻辑开关杆，要有光！</Value>
+		</Record>
+		<Record>
+			<Key>8TurnOnWallLight</Key>
+			<Value>拉逻辑开关杆打开灯</Value>
+		</Record>
+		<Record>
+			<Key>8Narration16D</Key>
+			<Value>干得好，学员——你已经掌握了基本的逻辑。但是要传递你的结果，你需要离开这个房间。门是锁着的！使用逻辑来解决这个问题。
+首先，关闭逻辑单元。</Value>
+		</Record>
+		<Record>
+			<Key>8TurnOffBatchWriter</Key>
+			<Value>关闭批量写入器电源开关</Value>
+		</Record>
+		<Record>
+			<Key>8Narration17D</Key>
+			<Value>您现在可以在不关闭灯的情况下重置逻辑开关杆。</Value>
+		</Record>
+		<Record>
+			<Key>8Closelever</Key>
+			<Value>复位逻辑开关杆</Value>
+		</Record>
+		<Record>
+			<Key>8Narration18D</Key>
+			<Value>对门进行编程很简单。它已经连接到网络 - 所以只需将逻辑编写器设置为输出为"玻璃门"，然后写入门的“Open”变量。</Value>
+		</Record>
+		<Record>
+			<Key>8BatchWriterOutput2</Key>
+			<Value>将逻辑写入器OUT设置为“玻璃门” </Value>
+		</Record>
+		<Record>
+			<Key>8BatchWriterLogicType2</Key>
+			<Value>将逻辑写入器OUT VAR设置为“Open”</Value>
+		</Record>
+		<Record>
+			<Key>8Narration19D</Key>
+			<Value>现在拉逻辑开关杆打开门。</Value>
+		</Record>
+		<Record>
+			<Key>8OpenDoor</Key>
+			<Value>拉逻辑开关杆打开门</Value>
+		</Record>
+		<Record>
+			<Key>8Narration20D</Key>
+			<Value>太好了，学员。您现在拥有创建基本逻辑电路的知识和技能。利用您的新智慧，尝试其他设备、系统和网络。那里有各种各样的可能性。按下重要的蓝色按钮将您的结果传输到ODA指挥部。</Value>
+		</Record>
+		<Record>
+			<Key>TutoiralLogicCompleteTutorial</Key>
+			<Value>这证实了此 NFT 证书的持有者已经展示了足够的基本逻辑系统的技能和知识。</Value>
+		</Record>
+		<Record>
+			<Key></Key>
+			<Value></Value>
+		</Record>
+		<Record>
+			<Key></Key>
+			<Value></Value>
+		</Record>
+		<Record>
+			<Key></Key>
+			<Value></Value>
+		</Record>
+		
+	
+	</Interface>
+</Language>

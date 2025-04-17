@@ -1,0 +1,29 @@
+{
+    "version": "2.0.0",
+    "configurations": [
+        {
+            "name": "调试clr",
+            "type": "clr",
+            "request": "launch",
+            "preLaunchTask": "链接",
+            "program": "C:/Users/L/Desktop/链接.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "console": "externalTerminal",
+            "stopAtEntry": false,
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "name": "调试coreclr",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/链接/bin/Debug/net9.0/链接.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "console": "externalTerminal",
+            "stopAtEntry": false,
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+    ]
+}

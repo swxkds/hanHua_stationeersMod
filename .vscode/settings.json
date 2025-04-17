@@ -1,0 +1,8 @@
+{
+    "editor.fontSize": 20,
+    "typescript.locale": "zh-CN",
+    "editor.fontFamily": "Consolas, '终端更纱黑体-简 Nerd', monospace",
+    "extensions.ignoreRecommendations": true,
+    "dotnet.preferCSharpExtension": true,
+    "idf.pythonInstallPath": "e:\\esp_tool\\Espressif\\tools\\idf-python\\3.8.7\\python.exe",
+}

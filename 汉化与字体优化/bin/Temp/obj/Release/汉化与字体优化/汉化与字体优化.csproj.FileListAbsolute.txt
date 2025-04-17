@@ -1,0 +1,7 @@
+C:\Users\L\Documents\My Games\Stationeers\mods\2968021662\Game_Data\微软雅黑.ttc
+C:\Users\L\Documents\My Games\Stationeers\mods\2968021662\Game_Data\汉化与字体优化.dll
+C:\Users\L\Documents\My Games\Stationeers\mods\2968021662\Game_Data\汉化与字体优化.pdb
+D:\meanran_xuexi_mods\汉化与字体优化\bin\Temp\obj\Release\汉化与字体优化\汉化与字体优化.csproj.AssemblyReference.cache
+D:\meanran_xuexi_mods\汉化与字体优化\bin\Temp\obj\Release\汉化与字体优化\汉化与字体优化.csproj.CoreCompileInputs.cache
+D:\meanran_xuexi_mods\汉化与字体优化\bin\Temp\obj\Release\汉化与字体优化\汉化与字体优化.dll
+D:\meanran_xuexi_mods\汉化与字体优化\bin\Temp\obj\Release\汉化与字体优化\汉化与字体优化.pdb
