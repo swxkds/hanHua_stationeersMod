@@ -170,14 +170,16 @@ namespace meanran_xuexi_mods_xiaoyouhua
                     if (区块 is Asteroid 行星区块 && (行星区块.Position - CameraController.CameraPosition).sqrMagnitude < 扫描距离)
                     {
                         // 每个DrawCall内保存着区块内同种矿石的所有变换矩阵,该区块有几种矿石就有几个DrawCall
-                        foreach (var DrawCall in 行星区块.MineableVisualizerDrawCalls)
+                        foreach (InstancedIndirectDrawCall DrawCall in 行星区块.MineableVisualizerDrawCalls)
                         {
-                            var 变换矩阵表 = 变换矩阵表偏移.GetValue(DrawCall) as List<InstancedIndirectDrawCall.MeshPerInstanceDatum>;
+                            var 元素数 = DrawCall.InstanceCount;
+                            var 变换矩阵表 = (InstancedIndirectDrawCall.MeshPerInstanceDatum[])变换矩阵表偏移.GetValue(DrawCall);
                             待移除表.Clear();
 
                             // MineableVisualizerDrawCalls 使用双缓冲一次性绘制该节点下所有同类矿石,变换矩阵表中保存着在哪些地方绘制
-                            foreach (var _ in 变换矩阵表)
+                            for (var i = 0; i < 元素数; i++)
                             {
+                                var _ = 变换矩阵表[i];
                                 var 矩阵 = _.ObjectToWorldMatrix;
                                 var 相对 = new Vector3(矩阵.m03 - CameraController.CameraPosition.x, 矩阵.m13 - CameraController.CameraPosition.y, 矩阵.m23 - CameraController.CameraPosition.z);
 

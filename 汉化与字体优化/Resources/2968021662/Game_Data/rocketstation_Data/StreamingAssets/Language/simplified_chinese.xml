@@ -1314,7 +1314,7 @@
     </RecordThing>
     <RecordThing>
       <Key>ItemHydroponicTray</Key>
-      <Value>(套件)水培箱</Value>
+      <Value>(套件)水培托盘</Value>
       <Description>该套件可建造用于种植各类作物的 {THING:StructureHydroponicsTray}</Description>
     </RecordThing>
     <RecordThing>
@@ -1434,7 +1434,7 @@
     </RecordThing>
     <RecordThing>
       <Key>ItemKitSolarPanel</Key>
-      <Value>(套件)太阳能板</Value>
+      <Value>(套件)转轴式太阳能板</Value>
       <Description/>
     </RecordThing>
     <RecordThing>
@@ -2217,8 +2217,8 @@ Stationeer长期抱怨输送系统的每个阶段都需独立供电. 用Recurso�
     </RecordThing>
     <RecordThing>
       <Key>StructureHydroponicsTray</Key>
-      <Value>水培箱</Value>
-      <Description>{LINK:Agrizero;Agrizero} 水培箱是培育 {LINK:OrganicPage;植物} 的理想设备, 需通过管道网络供水并提供光照进行光合作用, 可使用 {THING:StructureHarvie} 实现自动化管理</Description>
+      <Value>水培托盘</Value>
+      <Description>{LINK:Agrizero;Agrizero} 水培托盘是培育 {LINK:OrganicPage;植物} 的理想设备, 需通过管道网络供水并提供光照进行光合作用, 可使用 {THING:StructureHarvie} 实现自动化管理</Description>
     </RecordThing>
     <RecordThing>
       <Key>StructureIgniter</Key>
@@ -2343,7 +2343,7 @@ Stationeer长期抱怨输送系统的每个阶段都需独立供电. 用Recurso�
     </RecordThing>
     <RecordThing>
       <Key>StructureSolarPanel</Key>
-      <Value>可动式太阳能板</Value>
+      <Value>转轴式太阳能板</Value>
       <Description>{LINK:Sinotai;Sinotai} 标准太阳能板通过光照发电, 可连接 {LINK:LogicPage;逻辑系统} 实现日光追踪功能. 风暴期间或受损时效率下降, 可使用 {THING:ItemDuctTape} 进行维修</Description>
     </RecordThing>
     <RecordThing>
@@ -2986,7 +2986,7 @@ Stationeer长期抱怨输送系统的每个阶段都需独立供电. 用Recurso�
     </RecordThing>
     <RecordThing>
       <Key>StructureSolarPanelDual</Key>
-      <Value>可动式太阳能板(双口)</Value>
+      <Value>转轴式太阳能板(双口)</Value>
       <Description>{LINK:Sinotai;Sinotai} 双口太阳能板配备独立数据/电源接口, 可以连接到 { {LINK:LogicPage;Logic} 系统, 并通过日光追踪逻辑提升发电效率（风暴或受损时效率下降）, 可使用 {THING:ItemDuctTape} 进行维修</Description>
     </RecordThing>
     <RecordThing>
@@ -3691,7 +3691,7 @@ Stationeer长期抱怨输送系统的每个阶段都需独立供电. 用Recurso�
     </RecordThing>
     <RecordThing>
       <Key>StructureElevatorLevelFront</Key>
-      <Value>电梯层(接线口)</Value>
+      <Value>电梯停靠层(接线口)</Value>
       <Description/>
     </RecordThing>
     <RecordThing>
@@ -5592,17 +5592,17 @@ AIMEe有7种模式：
     </RecordThing>
     <RecordThing>
       <Key>ItemKitHarvie</Key>
-      <Value>(套件)农业LArRE轨道机械臂</Value>
+      <Value>(套件)固定式农业机械臂</Value>
       <Description/>
     </RecordThing>
     <RecordThing>
       <Key>StructureHarvieReversed</Key>
-      <Value>农业LArRE轨道机械臂</Value>
+      <Value>固定式农业机械臂(屏幕侧放)</Value>
       <Description>安装在 {THING:StructureHydroponicsTray} 或 {THING:StructureHydroponicsTrayData} 上方管理作物种植/收割. 按钮切换模式或连接逻辑系统, 模式能够显示当前生长状态：进口槽用于播种, 收割产物输送至出口槽</Description>
     </RecordThing>
     <RecordThing>
       <Key>StructureHarvie</Key>
-      <Value>农业LArRE轨道机械臂</Value>
+      <Value>固定式农业机械臂(屏幕正放)</Value>
       <Description>安装在 {THING:StructureHydroponicsTray} 或 {THING:StructureHydroponicsTrayData} 上方管理作物种植/收割. 按钮切换模式或连接逻辑系统, 模式能够显示当前生长状态：进口槽用于播种, 收割产物输送至出口槽</Description>
     </RecordThing>
     <RecordThing>
@@ -5739,8 +5739,8 @@ AIMEe有7种模式：
     <RecordThing>
       <Key>StructureGrowLight</Key>
       <Value>植物生长灯</Value>
-      <Description>{LINK:Agrizero;Agrizero} 领先的水培照明系统, GrowUp紫外线灯可在弱光或远离太阳的环境中补充光照. 该装置在网格空间内提升可种植性, 需近距离放置才能生效
-      	  
+    <Description>{LINK:Agrizero;Agrizero} 领先的水培照明系统, GrowUp紫外线灯可在弱光或远离太阳的环境中补充光照. 该装置在网格空间内提升可种植性, 需近距离放置才能生效.
+	  
 {HEADER:灯光覆盖范围示意（来自https://stationeers-wiki.com/File:GrowLight_topDown.jpg）}
 	□：覆盖范围
 	D：数据接口
@@ -5837,7 +5837,7 @@ AIMEe有7种模式：
     </RecordThing>
     <RecordThing>
       <Key>StructureHydroponicsTrayData</Key>
-      <Value>水培箱(数字)</Value>
+      <Value>水培托盘(数字)</Value>
       <Description>{LINK:Agrizero;Agrizero} 水培装置是种植 {LINK:OrganicPage;植物} 的理想容器. 需通过管道网络供应 {GAS:Water} 并保证充足光照以进行光合作用. 
 可使用 {THING:StructureHarvie} 自动化操作. 与 {THING:StructureHydroponicsTray} 不同, 这些装置因归类为设备而非纯管道而无法串行放置, 但支持逻辑系统数据查询</Description>
     </RecordThing>
@@ -5848,7 +5848,7 @@ AIMEe有7种模式：
     </RecordThing>
     <RecordThing>
       <Key>ItemKitSolarPanelReinforced</Key>
-      <Value>(套件)重型可动式太阳能板</Value>
+      <Value>(套件)重型转轴式太阳能板</Value>
       <Description/>
     </RecordThing>
     <RecordThing>
@@ -5863,7 +5863,7 @@ AIMEe有7种模式：
     </RecordThing>
     <RecordThing>
       <Key>StructureSolarPanelDualReinforced</Key>
-      <Value>重型可动式太阳能板(双口)</Value>
+      <Value>重型转轴式太阳能板(双口)</Value>
       <Description>该太阳能板可抵御风暴伤害</Description>
     </RecordThing>
     <RecordThing>
@@ -5873,7 +5873,7 @@ AIMEe有7种模式：
     </RecordThing>
     <RecordThing>
       <Key>StructureSolarPanelReinforced</Key>
-      <Value>重型可动式太阳能板(单口)</Value>
+      <Value>重型转轴式太阳能板(单口)</Value>
       <Description>该太阳能板可抵御风暴伤害</Description>
     </RecordThing>
     <RecordThing>
@@ -8802,8 +8802,9 @@ OGRE可连接滑槽系统并通过逻辑网络控制. 因高效处理工艺, 其
     </RecordThing>
     <RecordThing>
       <Key>StructureRoboticArmDock</Key>
-      <Value>LArRE轨道定制机械臂(通用)</Value>
-      <Description>线性铰接轨道实体(LArRE)可为水培箱作物种植、收割和施肥, 也可以从 {THING:StructureChuteExportBin} 抓取物品并投放至 {THING:StructureChuteBin} . LArRE可与线性轨道站下方或其坞站下方的水培箱/滑槽进行交互</Description>
+      <Value>LArRE单线站(配套简易农业臂)</Value>
+      <Description>线性铰接轨道实体(LArRE)可为水培托盘作物种植、收割和施肥, 也可以从 {THING:StructureChuteExportBin} 抓取物品并投放至 {THING:StructureChuteBin} . LArRE可与站台下方或其它作业泊位下方的水培托盘/滑槽进行交互
+      单线站没有港湾式避让线, 不要发生撞车事件哦!!</Description>
     </RecordThing>
     <RecordThing>
       <Key>ItemIcarusSuit</Key>
@@ -9083,7 +9084,7 @@ OGRE可连接滑槽系统并通过逻辑网络控制. 因高效处理工艺, 其
     </RecordThing>
     <RecordThing>
       <Key>ItemKitRoboticArm</Key>
-      <Value>(套件)LArRE轨道机械臂</Value>
+      <Value>(套件)LArRE单线站(配套简易农业臂)</Value>
       <Description/>
     </RecordThing>
     <RecordThing>
@@ -9093,23 +9094,23 @@ OGRE可连接滑槽系统并通过逻辑网络控制. 因高效处理工艺, 其
     </RecordThing>
     <RecordThing>
       <Key>StructureRoboticArmRailCornerStop</Key>
-      <Value>LArRE作业泊位(拐角)</Value>
-      <Description>线性轨道网络的转角节点组件, 与LArRE控制站台配合使用, 为机械臂在轨道上提供作业停靠点</Description>
+      <Value>LArRE轨道-作业泊位(拐角)</Value>
+      <Description>线性轨道网络的拐角轨道模块, LArRE机械臂通过轨道行进, 此模块可为机械臂在轨道上提供作业路径点，停靠时机械臂可对下方物体进行作业</Description>
     </RecordThing>
     <RecordThing>
       <Key>StructureRoboticArmRailStraight</Key>
-      <Value>LArRE轨道(直线)</Value>
-      <Description>线性轨道网络的直线段组件, 与LArRE控制站台配合使用</Description>
+      <Value>LArRE轨道(直行)</Value>
+      <Description>线性轨道网络的直行轨道模块, LArRE机械臂通过轨道行进</Description>
     </RecordThing>
     <RecordThing>
       <Key>StructureRoboticArmRailStraightStop</Key>
-      <Value>LArRE作业泊位(直线)</Value>
-      <Description>线性轨道网络的转角节点组件, 与LArRE控制站台配合使用, 为机械臂在轨道上提供作业停靠点</Description>
+      <Value>LArRE轨道-作业泊位(直行)</Value>
+      <Description>线性轨道网络的直行轨道模块, LArRE机械臂通过轨道行进, 此模块可为机械臂在轨道上提供作业路径点，停靠时机械臂可对下方物体进行作业</Description>
     </RecordThing>
     <RecordThing>
       <Key>StructureRoboticArmRailCorner</Key>
       <Value>LArRE轨道(拐角)</Value>
-      <Description>线性轨道网络的直线段组件, 与LArRE控制站台配合使用</Description>
+      <Description>线性轨道网络的拐角轨道模块, LArRE机械臂通过轨道行进</Description>
     </RecordThing>
     <RecordThing>
       <Key>StructureChuteExportBin</Key>
@@ -9119,12 +9120,12 @@ OGRE可连接滑槽系统并通过逻辑网络控制. 因高效处理工艺, 其
     <RecordThing>
       <Key>StructureRoboticArmRailOuterCorner</Key>
       <Value>LArRE轨道(外拐角)</Value>
-      <Description>线性轨道网络的直线段组件, 与LArRE控制站台配合使用</Description>
+      <Description>线性轨道网络的外拐角轨道模块, LArRE机械臂通过轨道行进</Description>
     </RecordThing>
     <RecordThing>
       <Key>StructureRoboticArmRailInnerCorner</Key>
       <Value>LArRE轨道(内拐角)</Value>
-      <Description>线性轨道网络的直线段组件, 与LArRE控制站台配合使用</Description>
+      <Description>线性轨道网络的内拐角轨道模块, LArRE机械臂通过轨道行进</Description>
     </RecordThing>
     <RecordThing>
       <Key>StructureReinforcedWall</Key>
@@ -9163,61 +9164,58 @@ OGRE可连接滑槽系统并通过逻辑网络控制. 因高效处理工艺, 其
     </RecordThing>
     <RecordThing>
       <Key>ItemKitLarreDockAtmos</Key>
-      <Value>(套件)LArRE轨道定制机械臂(气体)</Value>
+      <Value>(套件)LArRE港湾站(配套气体臂)</Value>
       <Description/>
     </RecordThing>
     <RecordThing>
       <Key>ItemKitLarreDockBypass</Key>
-      <Value>(套件)LArRE轨道机械臂-控制站</Value>
-    <Description>每一个机械臂都需要绑定一个控制站, 从控制站中取出作业工具或者将作业时收取的物品放入控制站内置的库存点
-    当控制站空置时, 其它机械臂或受控机械臂按下机械臂上的激活键，机械臂将从主轨上横向滑入控制站，以便其他臂可以通过。</Description>
+      <Value>(套件)LArRE避让港湾站</Value>
     </RecordThing>
     <RecordThing>
       <Key>ItemKitLarreDockHydroponics</Key>
-      <Value>(套件)LArRE轨道定制机械臂(农业)</Value>
+      <Value>(套件)LArRE港湾站(配套农业臂)</Value>
       <Description/>
     </RecordThing>
     <RecordThing>
       <Key>ItemKitLarreDockCargo</Key>
-      <Value>(套件)LArRE轨道定制机械臂(货运)</Value>
+      <Value>(套件)LArRE港湾站(配套货运臂)</Value>
       <Description/>
     </RecordThing>
     <RecordThing>
       <Key>ItemKitLarreDockCollector</Key>
-      <Value>(套件)LArRE轨道定制机械臂(地面清扫)</Value>
+      <Value>(套件)LArRE港湾站(配套扫地臂)</Value>
       <Description/>
     </RecordThing>
     <RecordThing>
       <Key>StructureLarreDockBypass</Key>
-      <Value>LArRE轨道机械臂-控制站</Value>
-       <Description>每一个机械臂都需要绑定一个控制站, 从控制站中取出作业工具或者将作业时收取的物品放入控制站内置的库存点
-    当控制站空置时, 其它机械臂或受控机械臂按下机械臂上的激活键，机械臂将从主轨上横向滑入控制站，以便其他臂可以通过。</Description>
+      <Value>LArRE避让港湾站</Value>
+       <Description>为会车让行专门设计的站台, 当机械臂处于港湾站主轨道且站台空置时按下激活按钮, 机械臂将从主轨道横向移动驶入港湾站以便其他机械臂通行. </Description>
     </RecordThing>
     <RecordThing>
       <Key>StructureLarreDockAtmos</Key>
-      <Value>LArRE轨道定制机械臂(气体)</Value>
+      <Value>LArRE港湾站(配套气体臂)</Value>
       <Description>气体型LArRE机械臂可泵送气体进出其内部气体存储空间. 当悬停于 {THING:StructurePassiveVent} 上方时, 机械臂将与其连接并对接管道网络进行气体传输. 
-当机械臂处于主坞站时按下激活按钮, 机械臂将移出主轨道以便其他机械臂通行. 
+当机械臂处于港湾站主轨道且站台空置时按下激活按钮, 机械臂将从主轨道横向移动驶入港湾站以便其他机械臂通行. 
 基础气体逻辑值指向LArRE内部存储空间, 输入气体逻辑值指向机械臂所在环境或通过 {THING:StructurePassiveVent} 对接的管道网络</Description>
     </RecordThing>
     <RecordThing>
       <Key>StructureLarreDockCargo</Key>
-      <Value>LArRE轨道定制机械臂(货运)</Value>
+      <Value>LArRE港湾站(配套货运臂)</Value>
       <Description>货运型LArRE机械臂可存取设备槽位物品. 前面板拨盘指示交互的目标槽位, 可通过代理槽索引(255)读取目标槽位物品的逻辑参数. 
-当机械臂处于主坞站时按下激活按钮, 机械臂会移出主轨道以便其他机械臂通行</Description>
+当机械臂处于港湾站主轨道且站台空置时按下激活按钮, 机械臂将从主轨道横向移动驶入港湾站以便其他机械臂通行. </Description>
     </RecordThing>
     <RecordThing>
       <Key>StructureLarreDockCollector</Key>
-      <Value>LArRE轨道定制机械臂(收集)</Value>
+      <Value>LArRE港湾站(配套扫地臂)</Value>
       <Description>收集型LArRE机械臂在模式设为吸入时可吸取周边散落物品, 设为导出时可释放存储物品. 吸入模式下, 当存储满时将自动停止并缩回. 
-当机械臂处于主坞站时按下激活按钮, 机械臂会移出主轨道以便其他机械臂通行</Description>
+当机械臂处于港湾站主轨道且站台空置时按下激活按钮, 机械臂将从主轨道横向移动驶入港湾站以便其他机械臂通行. </Description>
     </RecordThing>
     <RecordThing>
       <Key>StructureLarreDockHydroponics</Key>
-      <Value>LArRE轨道定制机械臂(农业)</Value>
+      <Value>LArRE港湾站(配套农业臂)</Value>
       <Description>农业型LArRE机械臂可进行种植、收割及施肥操作. 配备额外料斗槽, 当手持槽为空时, 料斗槽会自动填充到手持槽内. 若料斗槽为空且手持槽已满, 收割新作物时将会原有手持物品转移至料斗槽. 
 通过代理槽索引(255)可读取下方种植盘作物的变量参数. 
-当机械臂处于主坞站时按下激活按钮, 机械臂会移出主轨道以便其他机械臂通行</Description>
+当机械臂处于港湾站主轨道且站台空置时按下激活按钮, 机械臂将从主轨道横向移动驶入港湾站以便其他机械臂通行. </Description>
     </RecordThing>
     <RecordThing>
       <Key>StructureComputerUpright</Key>
@@ -9232,12 +9230,12 @@ OGRE可连接滑槽系统并通过逻辑网络控制. 因高效处理工艺, 其
     <RecordThing>
       <Key>StructureRoboticArmRailScrewLeft</Key>
       <Value>LArRE轨道(左旋)</Value>
-      <Description>线性机械臂轨道网络的左螺旋组件, 与LArRE控制站台配合使用</Description>
+      <Description>线性轨道网络的左螺旋轨道模块, LArRE机械臂通过轨道行进</Description>
     </RecordThing>
     <RecordThing>
       <Key>StructureRoboticArmRailScrewRight</Key>
       <Value>LArRE轨道(右旋)</Value>
-      <Description>线性机械臂轨道网络的右螺旋组件, 与LArRE控制站台配合使用</Description>
+      <Description>线性轨道网络的右螺旋轨道模块, LArRE机械臂通过轨道行进</Description>
     </RecordThing>
     <RecordThing>
       <Key>StructurePassiveVentValve</Key>
@@ -15370,7 +15368,7 @@ Stationeers涵盖多重角色：他们是宇航员、工程师兼探险家, 仅�
     </Record>
     <Record>
       <Key>FabricatorCategoryKey</Key>
-      <Value>装配机</Value>
+      <Value>制造设备</Value>
     </Record>
     <Record>
       <Key>IngotsCategoryKey</Key>
@@ -16671,7 +16669,7 @@ Stationeers涵盖多重角色：他们是宇航员、工程师兼探险家, 仅�
     </Record>
     <Record>
       <Key>Tutorial2ConnectPlantersHeading</Key>
-      <Value>将水箱连接到水培箱</Value>
+      <Value>将水箱连接到水培托盘</Value>
     </Record>
     <Record>
       <Key>Tut2PipesInLocker</Key>
@@ -20366,7 +20364,7 @@ Stationeers涵盖多重角色：他们是宇航员、工程师兼探险家, 仅�
     </Record>
     <Record>
       <Key>PlacementRequiresHydroponicsTray</Key>
-      <Value>需要放置在水培箱正上方</Value>
+      <Value>需要放置在水培托盘正上方</Value>
     </Record>
     <Record>
       <Key>CannotMergeTwoOperationalElevatorShafts</Key>

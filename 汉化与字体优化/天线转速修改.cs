@@ -18,4 +18,18 @@ namespace meanran_xuexi_mods_xiaoyouhua
         [HarmonyPostfix]
         public static void 俯仰轴转速调整(ref float __result) => __result = Mathf.Max(__result, 0.1f);
     }
+
+     [HarmonyPatch(typeof(LargeSatelliteDish), nameof(LargeSatelliteDish.MovementSpeedHorizontal), MethodType.Getter)]
+    public class LargeSatelliteDish_MovementSpeedHorizontal_Patch
+    {
+        [HarmonyPostfix]
+        public static void 方位轴转速调整(ref float __result) => __result = Mathf.Max(__result, 0.1f);
+    }
+
+    [HarmonyPatch(typeof(LargeSatelliteDish), nameof(LargeSatelliteDish.MovementSpeedVertical), MethodType.Getter)]
+    public class LargeSatelliteDish_MovementSpeedVertical_Patch
+    {
+        [HarmonyPostfix]
+        public static void 俯仰轴转速调整(ref float __result) => __result = Mathf.Max(__result, 0.1f);
+    }
 }

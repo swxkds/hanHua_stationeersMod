@@ -54,7 +54,7 @@ namespace meanran_xuexi_mods_xiaoyouhua
             float 俯仰夹角 = Mathf.Asin(地面天线.DishForward.y / 地面天线.DishForward.magnitude) - Mathf.Asin(目标商船.Angle.y / 目标商船.Angle.magnitude);
             俯仰夹角 = Mathf.Rad2Deg * 俯仰夹角;
 
-            float 方位 = (float)((地面天线.GetLogicValue(LogicType.Horizontal) + 方位夹角) % 360);
+            float 方位 = (float)((地面天线.GetLogicValue(LogicType.Horizontal) + 方位夹角 + 360) % 360);
             float 俯仰 = (float)((地面天线.GetLogicValue(LogicType.Vertical) + 俯仰夹角) % 90);
 
             return $"[{Mathf.Round(方位)}°,{Mathf.Round(俯仰)}°]";
