@@ -29,6 +29,9 @@ namespace meanran_xuexi_mods_xiaoyouhua
             补丁 = new Harmony("汉化与字体优化");
             补丁.PatchAll();
             关闭字体警报();
+        }
+        private void Start()
+        {
             并发构造().Forget();
         }
         private async UniTaskVoid 并发构造()

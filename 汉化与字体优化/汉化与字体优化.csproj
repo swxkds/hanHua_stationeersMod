@@ -46,7 +46,7 @@
     <!-- 不优化代码 -->
     <Optimize>false</Optimize>
     <!-- 输出目录 -->
-    <OutputPath>./out/Debug/</OutputPath>
+    <OutputPath>../out/Debug/</OutputPath>
     <!-- 宏定义 -->
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <!-- 错误报告 -->
@@ -82,7 +82,7 @@
 
   <!-- 声明需要在编译时打包进程序的内嵌资源目录 -->
   <ItemGroup>
-    <EmbeddedResource Include="Resources\**\*" />
+    <EmbeddedResource Include=".\Resources\**\*" />
   </ItemGroup>
 
   <!-- 声明需要在编译时拷贝到输出目录的文件,支持通配符 -->
@@ -94,15 +94,15 @@
 
   <!-- 需要编译的.cs文件 -->
   <ItemGroup>
-    <Compile Include="*.cs" />
-    <Compile Include="汉化\*.cs" />
-    <Compile Include="角磨机交互功能增加\*.cs" />
-    <Compile Include="贴标机交互功能增加\*.cs" />
-    <Compile Include="贴标机交互功能增加\贴标机打开螺丝链接选择面板\*.cs" />
-    <Compile Include="资源加载\*.cs" />
-    <Compile Include="字体\*.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI调整\*.cs" />
+    <Compile Include=".\*.cs" />
+    <Compile Include=".\汉化\*.cs" />
+    <Compile Include=".\角磨机交互功能增加\*.cs" />
+    <Compile Include=".\贴标机交互功能增加\*.cs" />
+    <Compile Include=".\贴标机交互功能增加\贴标机打开螺丝链接选择面板\*.cs" />
+    <Compile Include=".\资源加载\*.cs" />
+    <Compile Include=".\字体\*.cs" />
+    <Compile Include=".\Properties\AssemblyInfo.cs" />
+    <Compile Include=".\UI调整\*.cs" />
   </ItemGroup>
 
   <!-- 编译器使用的语法分析器 -->
