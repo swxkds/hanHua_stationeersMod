@@ -75,10 +75,15 @@
     <OutputPath>./bin/Release/</OutputPath>
   </PropertyGroup>
 
-  <!-- 引用本地程序集,Exclude:排除某个dll -->
-  <ItemGroup>
-    <Reference Include="..\引用\*.dll" Exclude="..\引用\0Harmony.dll"/>
-  </ItemGroup>
+  <!-- 引用本地程序集,Exclude:排除某个dll --> 
+<ItemGroup>
+  <MyDlls Include="..\引用\*.dll" Exclude="..\引用\0Harmony.dll"/>    <!-- 先用通配符获取所有 DLL -->
+</ItemGroup>
+<ItemGroup>
+  <Reference Include="@(MyDlls)">     <!-- 再把这些 DLL 转换为引用 -->
+    <Private>false</Private>          <!-- 不复制到输出目录 -->
+  </Reference>
+</ItemGroup>
 
   <!-- 声明需要在编译时打包进程序的内嵌资源目录 -->
   <ItemGroup>
@@ -93,16 +98,9 @@
   </ItemGroup>
 
   <!-- 需要编译的.cs文件 -->
-  <ItemGroup>
-    <Compile Include=".\*.cs" />
-    <Compile Include=".\汉化\*.cs" />
-    <Compile Include=".\角磨机交互功能增加\*.cs" />
-    <Compile Include=".\贴标机交互功能增加\*.cs" />
-    <Compile Include=".\贴标机交互功能增加\贴标机打开螺丝链接选择面板\*.cs" />
-    <Compile Include=".\资源加载\*.cs" />
-    <Compile Include=".\字体\*.cs" />
-    <Compile Include=".\Properties\AssemblyInfo.cs" />
-    <Compile Include=".\UI调整\*.cs" />
+   <ItemGroup>
+    <!-- 需要编译的.cs文件 --> 
+        <Compile Include=".\**\*.cs" Exclude=".\bin\**\*.cs" />
   </ItemGroup>
 
   <!-- 编译器使用的语法分析器 -->
