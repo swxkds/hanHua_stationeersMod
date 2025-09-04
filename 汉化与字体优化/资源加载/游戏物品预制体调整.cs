@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using Assets.Scripts.Objects.Motherboards;
+using Util;
 
 namespace meanran_xuexi_mods_xiaoyouhua
 {
@@ -46,6 +47,7 @@ namespace meanran_xuexi_mods_xiaoyouhua
 
                 foreach (var Object in 所有资源)
                 {
+                    // 在我的编译器上, 此处is操作符和case匹配似乎有时候会不生效？？？
                     var type = Object.GetType();
                     if (type == typeof(TMP_Text))
                     {
@@ -143,6 +145,11 @@ namespace meanran_xuexi_mods_xiaoyouhua
                                 }
                             case "PanelInWorldToolTip":
                                 {
+                                    var 鼠标按键与人物动作提示 = obj.transform.GetChild(0).GetChild(1).GetChild(0);
+                                    var HL = 鼠标按键与人物动作提示.GetComponent<HorizontalLayoutGroup>();
+                                    HL.SetEnable(true);
+                                    HL.childControlWidth = true;
+                                    鼠标按键与人物动作提示.GetChild(0).gameObject.SetActive(false);
                                     foreach (var 文本工具 in obj.GetComponentsInChildren<TMP_Text>(includeInactive: true))
                                         文本工具.修改大小与遮罩(32);
                                     入口类.Log.LogInfo($"成功修改克隆母版=>PanelInWorldToolTip");
@@ -252,6 +259,12 @@ namespace meanran_xuexi_mods_xiaoyouhua
                         var 通用页面 = Object as UniversalPage;
                         通用页面.gameObject.AddComponent<UniversalPage_延时修改>();
                         入口类.Log.LogInfo($"成功修改通用页面=>UniversalPage");
+                    }
+                    else if (type.IsSubclassOf(typeof(Assets.Scripts.Objects.Electrical.SimpleFabricatorBase)))
+                    {
+                        var 生产设备 = Object as Assets.Scripts.Objects.Electrical.SimpleFabricatorBase;
+                        生产设备.gameObject.AddComponent<对生产设备进行功能注入>();
+                        入口类.Log.LogInfo($"成功修改克隆母版=>生产设备 [{type}]");
                     }
                 }
             }

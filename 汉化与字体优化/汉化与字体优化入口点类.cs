@@ -40,6 +40,7 @@ namespace meanran_xuexi_mods_xiaoyouhua
             { await UniTask.NextFrame(); }
             无线输电面板类.构造();
             手持钻机矿石扫描.构造();
+            控制面板.构造();
             InventoryWindowManager.Instance.WindowGrid.spacing = 5f;
             入口类.Log.LogInfo($"成功修改背包UI间距");
             InventoryManager.Instance.UIProgressionBar.遍历修改大小(文本字段偏移表工具<UIProgressionBar>.文本字段偏移表, 24);

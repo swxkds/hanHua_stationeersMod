@@ -193,6 +193,8 @@ namespace meanran_xuexi_mods_xiaoyouhua
 
             switch (源)
             {
+                case "[^a-zA-Z0-9-]+": 结果 = "[^a-zA-Z0-9-\u4e00-\u9fa5]+"; break;
+                
                 case "Achievements": 结果 = "成就系统"; break;
                 case "Calm weather": 结果 = "平静的天气"; break;
 
@@ -542,7 +544,7 @@ namespace meanran_xuexi_mods_xiaoyouhua
             return 表;
         }
     }
-    public class Utils
+    public static class Utils
     {
         public static T 构造节点<T>(string 名称 = null) where T : Component => 构造节点<T>((Transform)null, 名称);
         public static T 构造节点<T>(GameObject parent, string 名称 = null) where T : Component => 构造节点<T>(parent ? parent.transform : null, 名称);
@@ -661,7 +663,7 @@ namespace meanran_xuexi_mods_xiaoyouhua
             tmp.text = 绘制文本;
             return tmp;
         }
-        public Button 构造可点击渲染组件(RectTransform parentRect)
+        public static Button 构造可点击渲染组件(RectTransform parentRect)
         {
             var 区域尺寸 = new Vector2(640, 50);
 
@@ -712,5 +714,151 @@ namespace meanran_xuexi_mods_xiaoyouhua
 
             return 点击按钮;
         }
+        public static string 日志内容_GUIStyle(this GUIStyle 样式实例_)
+        {
+            return
+            $"样式实例.name: {样式实例_.name}\n样式实例.padding: {样式实例_.padding}\n样式实例.border: {样式实例_.border}\n" +
+            $"样式实例.contentOffset: {样式实例_.contentOffset}\n样式实例.stretchHeight: {样式实例_.stretchHeight}\n" +
+            $"样式实例.stretchWidth: {样式实例_.stretchWidth}\n样式实例.alignment: {样式实例_.alignment}\n" +
+            $"样式实例.clipping: {样式实例_.clipping}\n样式实例.font: {样式实例_.font}\n样式实例.fontSize: {样式实例_.fontSize}\n" +
+            $"样式实例.fontStyle: {样式实例_.fontStyle}\n样式实例.richText: {样式实例_.richText}\n" +
+            $"样式实例.wordWrap: {样式实例_.wordWrap}\n样式实例.imagePosition: {样式实例_.imagePosition}\n" +
+            $"样式实例.fixedHeight: {样式实例_.fixedHeight}\n样式实例.fixedWidth: {样式实例_.fixedWidth}\n" +
+            $"样式实例.margin: {样式实例_.margin}\n样式实例.overflow: {样式实例_.overflow}\n" +
+            $"样式实例.normal.background: {样式实例_.normal.background}\n" +
+            $"样式实例.hover.background: {样式实例_.hover.background}\n" +
+            $"样式实例.active.background: {样式实例_.active.background}\n" +
+            $"样式实例.focused.background: {样式实例_.focused.background}\n" +
+            $"样式实例.onNormal.background: {样式实例_.onNormal.background}\n" +
+            $"样式实例.onHover.background: {样式实例_.onHover.background}\n" +
+            $"样式实例.onActive.background: {样式实例_.onActive.background}\n" +
+            $"样式实例.onFocused.background: {样式实例_.onFocused.background}\n";
+        }
+        public static void 初始化像素数组(this Color[] 像素数组_, int 列数_, int 行数_, int 边框宽度_, Color 主体颜色_, Color 边框颜色_)
+        {
+            if (列数_ * 行数_ != 像素数组_.Length)
+            { throw new Exception($"数组溢出: 访问下标=> {列数_ * 行数_} , 实际下标=> {像素数组_.Length}"); }
+
+            int 最大边框宽度 = Math.Min(列数_, 行数_) / 2;
+            if (边框宽度_ < 0 || 边框宽度_ > 最大边框宽度)
+            { throw new Exception($"边框宽度是负数或者大于最大边框宽度{最大边框宽度}"); }
+
+            for (var 行 = 0; 行 < 行数_; 行++)
+            {
+                for (var 列 = 0; 列 < 列数_; 列++)
+                {
+                    if (列 < 边框宽度_ || 列 >= 列数_ - 边框宽度_ || 行 < 边框宽度_ || 行 >= 行数_ - 边框宽度_)
+                    { 像素数组_[行 * 列数_ + 列] = 边框颜色_; }
+                    else { 像素数组_[行 * 列数_ + 列] = 主体颜色_; }
+                }
+            }
+        }
+        public static void 初始化GUIStyle(this GUIStyle 样式实例_, string 样式名称_, int 边框宽度_, int 内容区内缩宽度_, int 排版间距_, Texture2D 正常贴图_, Texture2D 悬停贴图_, Texture2D 按下贴图_, Texture2D 键盘焦点贴图_)
+        {
+            // 对于传入的样式实例, 不同的UI控件只会选择性的读取自己会使用到的样式参数
+            // 可以给垂直布局组(GUILayout.BeginVertical(样式实例);)或者水平布局组(GUILayout.BeginHorizontal(样式实例);)传入样式实例,    
+            // 布局组会读取样式实例中的 样式实例.normal.background 的贴图作为区域背景并渲染
+            样式实例_.name = 样式名称_;                                                             // GUIStyle的名称(用于根据名称获取它们)
+            样式实例_.padding = new(内容区内缩宽度_, 内容区内缩宽度_, 内容区内缩宽度_, 内容区内缩宽度_);   // 贴图区域收缩N后的区域是文本区
+            样式实例_.border = new(边框宽度_, 边框宽度_, 边框宽度_, 边框宽度_);                          // 贴图缩放时固定的边框宽度(原理见九宫格纹理)
+            样式实例_.contentOffset = Vector2.zero;                                               // 文本区左上角坐标偏移
+            样式实例_.stretchHeight = false;                                                      // 整体区域 < 窗口时是否缩放
+            样式实例_.stretchWidth = true;                                                       // 整体区域 < 窗口时是否缩放
+            样式实例_.alignment = TextAnchor.MiddleCenter;                                         // 文本对齐方式
+            样式实例_.clipping = TextClipping.Clip;                                               // 文本内容超出区域时的截断方式
+            样式实例_.font = GUI.skin.window.font;                                                // 文本字体
+            样式实例_.fontSize = GUI.skin.window.fontSize;                                        // 文本字体尺寸
+            样式实例_.fontStyle = GUI.skin.window.fontStyle;                                      // 文本字体加粗/斜体等变种
+            样式实例_.richText = true;                                                            // 文本富文本开关
+            样式实例_.wordWrap = false;                                                           // 文本自动换行开关
+            // ImageLeft:图像在左,文本在右; ImageAbove:图像在上,文本在下; ImageOnly:只显示图像; TextOnly:只显示文本
+            样式实例_.imagePosition = ImagePosition.TextOnly;                                     // 既有文本又有贴图时如何显示
+            样式实例_.fixedHeight = 0;                                                            // 强制区域尺寸(=0时由布局计算区域)
+            样式实例_.fixedWidth = 0;                                                             // 强制区域尺寸(=0时由布局计算区域)
+            样式实例_.margin = new(排版间距_, 排版间距_, 排版间距_, 排版间距_);                          // GUI元素之间的间距
+            样式实例_.overflow = new(0, 0, 0, 0);                // 贴图四边阴影宽度(只采样和渲染,不参与布局尺寸的部分)
+
+            // 鼠标无触碰UI控件显示的贴图/鼠标触碰UI控件显示的贴图/鼠标触碰UI控件+鼠标按下显示的贴图/鼠标触碰输入框+鼠标按下显示的贴图
+            样式实例_.normal.background = 正常贴图_;
+            样式实例_.hover.background = 悬停贴图_;
+            样式实例_.active.background = 按下贴图_;
+            样式实例_.focused.background = 键盘焦点贴图_;
+            // 状态类UI控件在切换状态时切换贴图, 例: 开关控件从按下状态切换到正常状态需要显示不同的贴图
+            样式实例_.onNormal.background = 正常贴图_;
+            样式实例_.onHover.background = 悬停贴图_;
+            样式实例_.onActive.background = 按下贴图_;
+            样式实例_.onFocused.background = 键盘焦点贴图_;
+
+            样式实例_.normal.textColor = Color.white;
+            样式实例_.onNormal.textColor = Color.white;
+            样式实例_.hover.textColor = Color.white;
+            样式实例_.onHover.textColor = Color.white;
+            样式实例_.active.textColor = Color.white;
+            样式实例_.onActive.textColor = Color.white;
+            样式实例_.focused.textColor = Color.white;
+            样式实例_.onFocused.textColor = Color.white;
+        }
+        public static GUIStyle 创建GUIStyle((string 名称, int 宽, int 高, int 边框宽度, int 内容区内缩宽度, int 排版间距, Color 主体颜色, Color 正常边框颜色, Color 悬停边框颜色, Color 按下边框颜色, Color 键盘焦点边框颜色) 样式_, GUIStyle 模板_ = null)
+        {
+            var 像素数组 = new Color[样式_.宽 * 样式_.高];        // 临时变量会自动释放内存
+
+            // 贴图的构造函数是Unity引擎封装的, 会自动将贴图资源添加到Unity引擎资源管理器
+            Texture2D 正常贴图 = null;
+            Texture2D 悬停贴图 = null;
+            Texture2D 按下贴图 = null;
+            Texture2D 键盘焦点贴图 = null;
+
+            GUIStyle 样式实例 = null;
+
+            if (样式_.正常边框颜色 != Color.clear)
+            {
+                正常贴图 = new Texture2D(样式_.宽, 样式_.高, TextureFormat.RGBA32, false, true);  // 引用被样式实例持有, 不需要释放内存
+                像素数组.初始化像素数组(样式_.宽, 样式_.高, 样式_.边框宽度, 样式_.主体颜色, 样式_.正常边框颜色);
+                正常贴图.SetPixels(像素数组);
+                正常贴图.Apply();
+                正常贴图.hideFlags = HideFlags.DontSave; // 默认情况下贴图资源在切换场景时会被Unity引擎释放
+            }
+
+            if (样式_.悬停边框颜色 != Color.clear)
+            {
+
+                悬停贴图 = new Texture2D(样式_.宽, 样式_.高, TextureFormat.RGBA32, false, true);  // 引用被样式实例持有, 不需要释放内存
+                像素数组.初始化像素数组(样式_.宽, 样式_.高, 样式_.边框宽度, 样式_.主体颜色, 样式_.悬停边框颜色);
+                悬停贴图.SetPixels(像素数组);
+                悬停贴图.Apply();
+                悬停贴图.hideFlags = HideFlags.DontSave; // 默认情况下贴图资源在切换场景时会被Unity引擎释放
+            }
+
+            if (样式_.按下边框颜色 != Color.clear)
+            {
+                按下贴图 = new Texture2D(样式_.宽, 样式_.高, TextureFormat.RGBA32, false, true);  // 引用被样式实例持有, 不需要释放内存
+                像素数组.初始化像素数组(样式_.宽, 样式_.高, 样式_.边框宽度, 样式_.主体颜色, 样式_.按下边框颜色);
+                按下贴图.SetPixels(像素数组);
+                按下贴图.Apply();
+                按下贴图.hideFlags = HideFlags.DontSave; // 默认情况下贴图资源在切换场景时会被Unity引擎释放
+            }
+
+            if (样式_.键盘焦点边框颜色 != Color.clear)
+            {
+                键盘焦点贴图 = new Texture2D(样式_.宽, 样式_.高, TextureFormat.RGBA32, false, true);  // 引用被样式实例持有, 不需要释放内存
+                像素数组.初始化像素数组(样式_.宽, 样式_.高, 样式_.边框宽度, 样式_.主体颜色, 样式_.键盘焦点边框颜色);
+                键盘焦点贴图.SetPixels(像素数组);
+                键盘焦点贴图.Apply();
+                键盘焦点贴图.hideFlags = HideFlags.DontSave; // 默认情况下贴图资源在切换场景时会被Unity引擎释放
+            }
+
+            if (模板_ == null) { 样式实例 = new GUIStyle(); }                // 引用被上级调用者持有, 不需要释放内存
+            else { 样式实例 = new GUIStyle(模板_); }
+            样式实例.初始化GUIStyle(样式_.名称, 样式_.边框宽度, 样式_.内容区内缩宽度, 样式_.排版间距, 正常贴图, 悬停贴图, 按下贴图, 键盘焦点贴图);
+
+            return 样式实例;
+        }
+        public static void Swap<T>(ref T a_, ref T b_)
+        {
+            T temp = a_;
+            a_ = b_;
+            b_ = temp;
+        }
+
     }
 }
