@@ -6,6 +6,8 @@ using Assets.Scripts.Objects.Electrical;
 using meanran_xuexi_mods_xiaoyouhua;
 using UnityEngine;
 using HarmonyLib;
+using Assets.Scripts;
+using Assets.Scripts.Objects.Entities;
 
 namespace meanran_xuexi_mods_xiaoyouhua
 {
@@ -37,7 +39,7 @@ namespace meanran_xuexi_mods_xiaoyouhua
         {
             // KeyWrap的构造函数中自动将引用添加到游戏的事件轮询表中
             var keyWrap = new InputSystem.KeyWrap(KeyCode.Home, null);
-            keyWrap.KeyUp += () => m_主窗口开关 = !m_主窗口开关; ;
+            keyWrap.KeyUp += () => m_主窗口开关 = !m_主窗口开关;
 
             m_主窗口ID = GetInstanceID();
             Utils.唤醒节点(this);
@@ -45,7 +47,7 @@ namespace meanran_xuexi_mods_xiaoyouhua
 
         private void OnGUI()
         {
-            if (!m_主窗口开关) { return; }
+            if (!m_主窗口开关 || !Human.LocalHuman) { return; }
 
             if (样式加载了么 == 0)
             {
