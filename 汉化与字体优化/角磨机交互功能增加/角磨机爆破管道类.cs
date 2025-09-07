@@ -68,7 +68,10 @@ namespace meanran_xuexi_mods_xiaoyouhua
                 {
                     // 播放音效
                     角磨机.PlaySound(AngleGrinder.UnEquipGrinderHash, 1f, 1f);
-                    管道.BurstPipe(Assets.Scripts.Networks.PipeBurst.Pressure).Forget();
+
+                    // 攻击造成损伤, 让管道在生命状态更新中判断血不够然后自爆
+                    管道.DamageState.Damage(ChangeDamageType.Increment, 200f, DamageUpdateType.Burn);
+                    // 管道.BurstPipe(Assets.Scripts.Networks.PipeBurst.Pressure).Forget(); 
                 }
             }
 
